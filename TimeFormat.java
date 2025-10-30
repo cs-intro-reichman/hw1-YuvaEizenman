@@ -49,7 +49,7 @@ public class TimeFormat {
 					System.out.println(hours+":"+minutes+" "+time);
 				}
 			else
-				System.out.println(hours+": 0"+minutes+" "+time);
+				System.out.println(hours+":0"+minutes+" "+time);
 			
 			}
 		}	
