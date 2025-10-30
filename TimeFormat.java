@@ -15,29 +15,49 @@ public class TimeFormat {
 			
 		
         // Replace this comment with the rest of your code
-	String time; 
-	if (hours>12||hours<1 && hours!=0 ){
-		time="PM";
-		hours=hours-12;
-		if (minutes==0) {
-			System.out.println(hours+": 00 "+time);	
-		}
-		else if (minutes>0 && minutes<9) {
-			System.out.println(hours+":0"+minutes+" "+time);	
-
+		String time; 
+		if (hours>12||hours<1 && hours!=0 ){
+			time="PM";
+			hours=hours-12;
+			if (minutes==0) 
+				System.out.println(hours+": 00 "+time);	
 			
-		}
-		else
-			System.out.println(hours+":"+minutes+" "+time);	
+			else if (minutes>0 && minutes<9) 
+				System.out.println(hours+":0"+minutes+" "+time);		
+			
+			else
+				System.out.println(hours+":"+minutes+" "+time);	
 
-	}
-	else {
-		time="AM";
-		if(minutes==0){
-			System.out.println(hours+":00 "+time);
 		}
+		else {
+			if (hours==12) {
+				time="PM";
+				if(minutes==0)
+					System.out.println(hours+":00 "+time);
+				else if (minutes>10) {
+					System.out.println(hours+":"+minutes+" "+time);
+				}
+				else
+					System.out.println(hours+":0"+minutes+" "+time);
+			}
+			else if (hours<12) {
+				time="AM";
+				if(minutes==0)
+					System.out.println(hours+":00 "+time);
+
+				else if (minutes>10) {
+					System.out.println(hours+":"+minutes+" "+time);
+				}
+			else
+				System.out.println(hours+": 0"+minutes+" "+time);
+			
+			}
+		}	
 	}
+
 }
-}
+
+	
+
 
 		
